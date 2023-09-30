@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "MovieGuide"
 include(":app")
- 
+include(":data:model")
+include(":data:network")
