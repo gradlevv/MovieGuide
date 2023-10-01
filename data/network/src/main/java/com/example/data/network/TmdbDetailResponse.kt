@@ -18,7 +18,7 @@ data class TmdbDetailResponse(
   val budget: Long,
   val genres: List<Genre>,
   val homepage: String,
-  val id: Long,
+  val id: Int,
 
   @SerialName("imdb_id")
   val imdbID: String,
