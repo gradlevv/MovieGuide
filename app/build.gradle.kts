@@ -1,8 +1,13 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
   alias(libs.plugins.com.android.application)
   alias(libs.plugins.org.jetbrains.kotlin.android)
   id("com.diffplug.spotless") version "6.21.0"
+
+  kotlin("kapt")
+  alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -20,6 +25,10 @@ android {
     vectorDrawables {
       useSupportLibrary = true
     }
+  }
+
+  kapt {
+    correctErrorTypes = true
   }
 
   buildTypes {
@@ -55,6 +64,8 @@ dependencies {
 
   implementation(project(":feature:movie-detail"))
 
+  implementation(libs.android.hilt)
+  kapt(libs.android.hilt.compiler)
 
   implementation(libs.core.ktx)
   implementation(libs.lifecycle.runtime.ktx)

@@ -35,8 +35,11 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version = "2.9
 kotlinx-serialization-json = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0"
 kotlinx-serialization-converter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0"
 
-lifecycle-viewmodel-compose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1"
-lifecycle-runtime-compose = "androidx.lifecycle:lifecycle-runtime-compose:2.6.1"
+lifecycle-viewmodel-compose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2"
+lifecycle-runtime-compose = "androidx.lifecycle:lifecycle-runtime-compose:2.6.2"
+
+android-hilt = "com.google.dagger:hilt-android:2.48.1"
+android-hilt-compiler = "com.google.dagger:hilt-compiler:2.48.1"
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
@@ -44,6 +47,7 @@ org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.re
 org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
 com-android-library = { id = "com.android.library", version.ref = "agp" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+hilt-android = { id = "com.google.dagger.hilt.android", version = "2.44" }
 
 [bundles]
 
