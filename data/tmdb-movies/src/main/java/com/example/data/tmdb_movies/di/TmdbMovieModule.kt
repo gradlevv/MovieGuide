@@ -1,5 +1,6 @@
 package com.example.data.tmdb_movies.di
 
+import com.example.data.tmdb_movies.TmdbMovieRepository
 import com.example.data.tmdb_movies.TmdbMovieRepositoryImpl
 import dagger.Binds
 import dagger.Module
@@ -11,5 +12,5 @@ import dagger.hilt.components.SingletonComponent
 internal abstract class TmdbMovieModule {
 
   @Binds
-  abstract fun bindTmdbMovieRepository(impl: TmdbMovieRepositoryImpl): TmdbMovieModule
+  abstract fun bindTmdbMovieRepository(impl: TmdbMovieRepositoryImpl): TmdbMovieRepository
 }
