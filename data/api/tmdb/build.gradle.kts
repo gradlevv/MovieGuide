@@ -2,6 +2,9 @@
 plugins {
   alias(libs.plugins.com.android.library)
   alias(libs.plugins.org.jetbrains.kotlin.android)
+
+  kotlin("kapt")
+  alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -37,6 +40,10 @@ dependencies {
 
   implementation(project(":data:model"))
   implementation(project(":data:network"))
+
+  implementation(libs.android.hilt)
+  kapt(libs.android.hilt.compiler)
+
   implementation(libs.core.ktx)
   implementation(libs.appcompat)
   implementation(libs.material)

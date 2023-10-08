@@ -1,8 +1,13 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
   alias(libs.plugins.com.android.library)
   alias(libs.plugins.org.jetbrains.kotlin.android)
   id("kotlinx-serialization")
+
+  kotlin("kapt")
+  alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -41,6 +46,10 @@ dependencies {
   implementation(libs.material)
   implementation(libs.retrofit)
   implementation(libs.kotlinx.serialization.json)
+  implementation(libs.kotlinx.serialization.converter)
+
+  implementation(libs.android.hilt)
+  kapt(libs.android.hilt.compiler)
 
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.test.ext.junit)
