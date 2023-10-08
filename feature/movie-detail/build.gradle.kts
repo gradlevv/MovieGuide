@@ -2,6 +2,9 @@
 plugins {
   alias(libs.plugins.com.android.library)
   alias(libs.plugins.org.jetbrains.kotlin.android)
+
+  kotlin("kapt")
+  alias(libs.plugins.hilt.android)
 }
 
 android {
@@ -56,6 +59,9 @@ dependencies {
   implementation(libs.material3)
   implementation(libs.lifecycle.viewmodel.compose)
   implementation(libs.lifecycle.runtime.compose)
+
+  implementation(libs.android.hilt)
+  kapt(libs.android.hilt.compiler)
 
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.test.ext.junit)
