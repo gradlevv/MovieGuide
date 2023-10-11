@@ -38,6 +38,7 @@ kotlinx-serialization-converter = "com.jakewharton.retrofit:retrofit2-kotlinx-se
 lifecycle-viewmodel-compose = "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2"
 lifecycle-runtime-compose = "androidx.lifecycle:lifecycle-runtime-compose:2.6.2"
 
+android-hilt-navigation-compose = "androidx.hilt:hilt-navigation-compose:1.0.0"
 android-hilt = "com.google.dagger:hilt-android:2.48.1"
 android-hilt-compiler = "com.google.dagger:hilt-compiler:2.48.1"
 
