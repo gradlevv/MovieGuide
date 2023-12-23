@@ -1,8 +1,8 @@
 package com.example.feature.movie_detail
 
-import com.example.data.model.VideoThumbnail
+import com.example.data.model.VideoDetail
 
 data class MovieDetailState(
   val isLoading: Boolean = false,
-  val videoThumbnail: VideoThumbnail? = null,
+  val videoDetail: VideoDetail? = null,
 )
