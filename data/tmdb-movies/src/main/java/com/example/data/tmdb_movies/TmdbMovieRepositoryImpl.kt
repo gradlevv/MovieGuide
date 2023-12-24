@@ -10,4 +10,8 @@ class TmdbMovieRepositoryImpl @Inject constructor(private val remoteSource: Tmdb
   override suspend fun getMovieDetail(movieId: Int): VideoDetail {
     return remoteSource.getMovieDetails(movieId)
   }
+
+  override suspend fun getTrendingMovies(): List<VideoThumbnail> {
+    return remoteSource.getTrendingMovies()
+  }
 }

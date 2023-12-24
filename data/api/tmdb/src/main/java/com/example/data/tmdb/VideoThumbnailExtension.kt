@@ -4,6 +4,7 @@ import com.example.data.model.VideoDetail
 import com.example.data.model.VideoId
 import com.example.data.model.VideoThumbnail
 import com.example.data.network.TmdbDetailResponse
+import com.example.data.network.TmdbVideoResult
 
 private val TMDB_BASE_IMAGE_URL = "https://image.tmdb.org/t/p/original"
 
@@ -34,5 +35,17 @@ fun TmdbDetailResponse.toVideoDetail(): VideoDetail {
     spokenLanguage = spokenLanguages.run { map { it.englishName }.filter { it.isNotEmpty() } },
     description = overview,
     tagLine = tagline,
+  )
+}
+
+fun TmdbVideoResult.toVideoThumbnail(): VideoThumbnail {
+  return VideoThumbnail(
+    ids = VideoId(
+      traktId = null,
+      tmdbId = null,
+    ),
+    title = "",
+    posterUrl = "",
+    year = 0,
   )
 }

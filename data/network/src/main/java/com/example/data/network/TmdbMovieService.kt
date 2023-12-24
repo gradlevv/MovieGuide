@@ -15,19 +15,24 @@ interface TmdbMovieService {
     @Path("movie_id") movieId: Int,
     @Query("api_key") apiKey: String = "810c562d7da2a5e12bb916fd87db80ac",
   ): TmdbDetailResponse
+
+  @GET("trending/movie/day")
+  suspend fun getTrendingMovies(
+    @Query("api_key") apiKey: String = ""
+  ): TrendingResponse
 }
 
-//suspend fun main() {
-//
-//  val json = Json { ignoreUnknownKeys = true }
-//  val retrofit = Retrofit.Builder()
-//    .baseUrl("https://api.themoviedb.org/3/")
-//    .addConverterFactory(
-//      json.asConverterFactory(MediaType.get("application/json")),
-//    )
-//    .build()
-//
-//  val service = retrofit.create(TmdbMovieService::class.java)
-//  val result = service.getMovieDetails(15733)
-//  println(result)
-//}
+suspend fun main() {
+
+  val json = Json { ignoreUnknownKeys = true }
+  val retrofit = Retrofit.Builder()
+    .baseUrl("https://api.themoviedb.org/3/")
+    .addConverterFactory(
+      json.asConverterFactory(MediaType.get("application/json")),
+    )
+    .build()
+
+  val service = retrofit.create(TmdbMovieService::class.java)
+  val result = service.getTrendingMovies()
+  println(result)
+}

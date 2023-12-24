@@ -6,4 +6,5 @@ import com.example.data.model.VideoThumbnail
 interface TmdbMovieRepository {
 
   suspend fun getMovieDetail(movieId:Int): VideoDetail
+  suspend fun getTrendingMovies(): List<VideoThumbnail>
 }
