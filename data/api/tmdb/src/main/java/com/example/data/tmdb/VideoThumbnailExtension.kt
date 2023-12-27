@@ -41,11 +41,11 @@ fun TmdbDetailResponse.toVideoDetail(): VideoDetail {
 fun TmdbVideoResult.toVideoThumbnail(): VideoThumbnail {
   return VideoThumbnail(
     ids = VideoId(
-      traktId = null,
+      traktId = id,
       tmdbId = null,
     ),
-    title = "",
-    posterUrl = "",
-    year = 0,
+    title = title.orEmpty(),
+    posterUrl = TMDB_BASE_IMAGE_URL.plus(posterPath),
+    year = releaseDate?.take(4)?.toInt() ?: 0,
   )
 }

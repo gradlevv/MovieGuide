@@ -63,6 +63,7 @@ android {
 dependencies {
 
   implementation(project(":feature:movie-detail"))
+  implementation(project(":feature:home"))
 
   implementation(libs.android.hilt)
   kapt(libs.android.hilt.compiler)
